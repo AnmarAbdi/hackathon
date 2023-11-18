@@ -22,3 +22,12 @@ nav {
     text-align: left
 }
 
+
+nav a:hover {
+    background-color: #777
+}
+
+nav a {
+    margin: 0 40px; /* Adjust the margin to add spacing between links */
+}
+
