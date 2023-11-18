@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h2>Chat with our bot</h2>
+    <div id="chatbox">
+        <div id="messages" style="height:300px; border:1px solid #ccc; padding:10px; overflow:auto"></div>
+        <input type="text" id="user_input" placeholder="Type your message here..." style="width:80%">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userMessage = $("#user_input").val();
+            $("#messages").append("<div>User: " + userMessage + "</div>");
+
+            $.ajax({
+                url: "/consultation",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({ message: userMessage }),
+                success: function(data) {
+                    $("#messages").append("<div>Bot: " + data.response + "</div>");
+                },
+                error: function(error) {
+                    console.log("Error:", error);
+                    $("#messages").append("<div>Bot: Sorry, there was an error.</div>");
+                }
+            });
+
+            $("#user_input").val(""); // clear the input field
+            updateScroll(); // keep the latest messages visible
+        }
+
+    </script>
+</body>
+</html>
