@@ -1,0 +1,12 @@
+
+h1 {
+    text-align: center;
+    padding: 10px;
+    background-color: #E8E8E8; /* Added a semicolon here */
+  }
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Added a semicolon here */
+    margin: 20px;
+  }
+
