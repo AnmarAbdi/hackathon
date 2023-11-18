@@ -68,5 +68,20 @@ def process_user_message(message):
     except Exception as e:
         return f"An unexpected error occurred: {e}"
 
+''' 
+Tried implementing a way to clear the conversation_history but i couldnt figure it out
+
+@app.route("/clear-conversation", methods=["POST"])
+def clear_conversation():
+    global conversation_history
+    conversation_history = []
+    return "", 200  # Return an empty response with a 200 OK status
+
+@app.route("/debug/conversation_history")
+def debug_conversation_history():
+    global conversation_history
+    return jsonify(conversation_history)
+'''
+
 if __name__ == "__main__":
     app.run(debug=True)
