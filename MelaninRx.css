@@ -11,13 +11,8 @@ h2 {
     font-weight: normal;
     font-style: normal;
     font-size: 20px;
-}
-
-h3 {
-    text-align: left;
-    font-family: normal;
-    margin: 20px;
-    font-size: 25px;
+    text-align: center;
+    font-family: cursive, 'Lucida Handwriting', 'Lucida Sans', 'Comic Sans MS';
 }
 
 p1 {
