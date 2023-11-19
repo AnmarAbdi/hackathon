@@ -1,7 +1,11 @@
 body {
     background-color: #d3d3d3; /* Light grey */
+    margin: 0px;
 }
-
+main{
+    margin-left: 20px;
+    margin-right: 20px;
+}
 h1 {
     text-align: center;
     padding: 10px;
@@ -36,12 +40,31 @@ nav {
     text-align: center;
 }
 
+nav ul {
+    list-style-type: none;
+    background-color: hsl(0, 0%, 25%);
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    text-align: center;
+    
+}
+
+nav li {
+    float: left;
+    
+}
 
 nav a:hover {
-    background-color: #777
+    background-color: hsl(0, 0%, 10%)
 }
 
 nav a {
-    margin: 0 40px; /* Adjust the margin to add spacing between links */
+    margin: 0; /* Adjust the margin to add spacing between links */
+    text-decoration: none;
+    padding: 15px;
+    color: white;
+    display: block;
+    text-align: center;
 }
 
