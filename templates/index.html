@@ -1,40 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Chatbot</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
+
 <body>
-    <h2>Chat with our bot</h2>
-    <div id="chatbox">
-        <div id="messages" style="height:300px; border:1px solid #ccc; padding:10px; overflow:auto"></div>
-        <input type="text" id="user_input" placeholder="Type your message here..." style="width:80%">
-        <button onclick="sendMessage()">Send</button>
-    </div>
+    <title>MelaninRx</title>
+    <h1> MelaninRx </h1>
+    <h2> Empowering minority voices to make educated medical choices!</h2>
+    <nav>
+        <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/chatbox">Chatbox</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="/patient">Patient Portal</a></li>
+        </ul>
+    </nav>
 
-    <script>
-        function sendMessage() {
-            var userMessage = $("#user_input").val();
-            $("#messages").append("<div>User: " + userMessage + "</div>");
+    <br />
+    <p1>Welcome to MelaninRx!</p1>
+    <br />
+    <br />
+    
 
-            $.ajax({
-                url: "/consultation",
-                type: "POST",
-                contentType: "application/json",
-                data: JSON.stringify({ message: userMessage }),
-                success: function(data) {
-                    $("#messages").append("<div>Bot: " + data.response + "</div>");
-                },
-                error: function(error) {
-                    console.log("Error:", error);
-                    $("#messages").append("<div>Bot: Sorry, there was an error.</div>");
-                }
-            });
+    <p1> About Us: <p1>
+    <br />
 
-            $("#user_input").val(""); // clear the input field
-            updateScroll(); // keep the latest messages visible
-        }
+    <p1> 
+        At MelaninRx, we are on a mission to revolutionize healthcare for minority communities, empowering individuals to make informed medical decisions. Through cutting-edge technology, including AI-driven chatbots and machine learning, we strive to bridge the gap in medical information, combat medical racism, and provide a platform that advocates for the rights and well-being of minority voices.
+    </p1>
 
-    </script>
+    <br />
+    <p1>
+
+    <p2>
+        Our commitment extends beyond connecting patients with knowledgeable healthcare professionals; we aim to educate, eradicate biases, and foster a healthcare environment that prioritizes inclusivity and understanding. Melanin Rx is not just an app; it's a movement towards a healthier, more equitable future for all.
+    </p1>
+
+    <br />
+    <br />
+
+    <p3> If you are a patient, click below </p3>
+    <br />
+    <a href="/patient">Patient Portal</a>
+
+    <br />
+    <br />
+
+    <p4> If you are a healthcare professional, click below </p4>
+    <br />
+    <a href="/professional">Healthcare Professional Panel</a>
+
 </body>
 </html>

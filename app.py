@@ -13,6 +13,26 @@ conversation_history = []
 def index():
     return render_template('index.html')
 
+@app.route("/chatbox")
+def chatbox():
+    return render_template('chatbox.html')
+
+@app.route("/resources")
+def resources():
+    return render_template('medresources.html')
+
+@app.route("/patient")
+def patient():
+    return render_template('patient.html')
+
+@app.route("/professional")
+def professional():
+    return render_template('professional.html')
+
+@app.route("/simulator")
+def simulator():
+    return render_template('simulatorchat.html')
+
 @app.route("/consultation", methods=["POST"])
 def consultation():
     global conversation_history

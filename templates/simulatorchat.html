@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Medical Care Chatbot</title>
+    <title>Chatbot</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
+    <title>MelaninRx</title>
+    <h1> MelaninRx </h1>
+    <h2> Empowering minority voices to make educated medical choices!</h2>
+    <nav>
+        <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/chatbox">Chatbox</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="/patient">Patient Portal</a></li>
+        </ul>
+    </nav>
+
     <h2>Chat with our bot</h2>
     <div id="chatbox">
         <div id="messages" style="height:300px; border:1px solid #ccc; padding:10px; overflow:auto"></div>
