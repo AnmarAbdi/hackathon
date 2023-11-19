@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Doctors</title>
+</head>
+<body>
+
+    <h1>Find Doctors in Your Area</h1>
+
+    <form id="doctorSearchForm">
+        <label for="zipCode">Enter your zip code:</label>
+        <input type="text" id="zipCode" name="zipCode" required>
+        
+        <label for="keyword">Enter a keyword (e.g., 'POC'): </label>
+        <input type="text" id="keyword" name="keyword">
+
+        <button type="button" onclick="findDoctors()">Find Doctors</button>
+    </form>
+
+    <div id="results"></div>
+
+    <script>
+        function findDoctors() {
+            var zipCode = document.getElementById("zipCode").value;
+            var keyword = document.getElementById("keyword").value;
+
+            // Perform AJAX request to Python script with user inputs
+            // Replace 'YOUR_SERVER_URL' with the actual URL where your Python script is hosted
+            var scriptUrl = 'YOUR_SERVER_URL/find_doctors_script.py?zip_code=' + zipCode +
+                            '&keyword=' + keyword;
+
+            // You can use various methods to perform the AJAX request (e.g., fetch, XMLHttpRequest)
+            // Here, I'll use fetch for simplicity
+            fetch(scriptUrl)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("results").innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+
+</body>
+</html>
