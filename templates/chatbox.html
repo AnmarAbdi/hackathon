@@ -8,18 +8,21 @@
 </head>
 <body>
     <title>MelaninRx</title>
-    <h1> MelaninRx </h1>
+    <h1 class="title"> MelaninRx </h1>
     <h2> Empowering minority voices to make educated medical choices!</h2>
     <nav>
         <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/chatbox">Chatbox</a></li>
-        <li><a href="/resources">Resources</a></li>
-        <li><a href="/patient">Patient Portal</a></li>
+            <li><a href="/" class="{{ 'active' if request.path == '/' else '' }}">Home</a></li>
+            <li><a href="/chatbox" class="{{ 'active' if request.path == '/chatbox' else '' }}">Chatbox</a></li>
+            <li><a href="/resources" class="{{ 'active' if request.path == '/resources' else '' }}">Resources</a></li>
+            <li><a href="/patient" class="{{ 'active' if request.path == '/patient' else '' }}">Patient Portal</a></li>
         </ul>
     </nav>
+    
 
-    <h2>Chat with our bot</h2>
+    <h1>Chat with our bot</h2>
+    <h3 class="chatboxsum">We're here to listen! Please share how you're feeling and any symptoms you're experiencing. Our chatbot is designed to understand your situation and will suggest important health topics and questions you may want to discuss with your healthcare provider. This can help ensure you receive the comprehensive care you deserve.
+    </h3>
     <div id="chatbox">
         <div id="messages" style="height:300px; border:1px solid #ccc; padding:10px; overflow:auto"></div>
         <input type="text" id="user_input" placeholder="Type your message here..." style="width:80%">
@@ -37,11 +40,11 @@
                 contentType: "application/json",
                 data: JSON.stringify({ message: userMessage }),
                 success: function(data) {
-                    $("#messages").append("<div>Bot: " + data.response + "</div>");
+                    $("#messages").append("<div>MelaninRx: " + data.response + "</div>");
                 },
                 error: function(error) {
                     console.log("Error:", error);
-                    $("#messages").append("<div>Bot: Sorry, there was an error.</div>");
+                    $("#messages").append("<div>MelaninRx: Sorry, there was an error.</div>");
                 }
             });
 
